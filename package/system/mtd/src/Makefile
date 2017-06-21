@@ -10,6 +10,7 @@ obj.brcm = trx.o
 obj.brcm47xx = $(obj.brcm)
 obj.bcm53xx = $(obj.brcm) $(obj.seama)
 obj.brcm63xx = imagetag.o
+obj.octeon = $(obj.wrgg)
 obj.ramips = $(obj.seama)
 obj.mvebu = linksys_bootcount.o
 obj.kirkwood = linksys_bootcount.o
