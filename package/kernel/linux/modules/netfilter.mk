@@ -15,7 +15,7 @@ define KernelPackage/nf-ipt
   SUBMENU:=$(NF_MENU)
   TITLE:=Iptables core
   KCONFIG:= \
-  	CONFIG_NETFILTER=y \
+	CONFIG_NETFILTER=y \
 	CONFIG_NETFILTER_ADVANCED=y \
 	$(KCONFIG_NF_IPT)
   FILES:=$(foreach mod,$(NF_IPT-m),$(LINUX_DIR)/net/$(mod).ko)
@@ -849,7 +849,9 @@ define KernelPackage/nft-core
 	CONFIG_NFT_COMPAT=n \
 	CONFIG_NFT_QUEUE=n \
 	CONFIG_NF_TABLES_ARP=n \
-	CONFIG_NF_TABLES_BRIDGE=n \
+	CONFIG_NF_TABLES_BRIDGE=y \
+	CONFIG_NFT_BRIDGE_META=y \
+	CONFIG_NFT_BRIDGE_REJECT=y \
 	$(KCONFIG_NFT_CORE)
 endef
 
